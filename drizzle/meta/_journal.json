@@ -15,6 +15,13 @@
       "when": 1735386307033,
       "tag": "0001_regular_havok",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1735565080869,
+      "tag": "0002_keen_ares",
+      "breakpoints": true
     }
   ]
 }

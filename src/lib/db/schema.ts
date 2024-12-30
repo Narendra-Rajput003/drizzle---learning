@@ -18,6 +18,7 @@ export const users=pgTable('users',{
     firstname:varchar('firstname',{length:100}).notNull(),
     lastname:varchar('lastname',{length:100}).notNull(),
     email:varchar('email',{length:100}).unique().notNull(),
+    password:varchar('password', {length:100}).notNull(),
     age:integer('age').notNull(),
     role:rolesEnum().default("user"),
         updatedAt: timestamp('updated_at').default(sql`CURRENT_TIMESTAMP`),
@@ -62,5 +63,8 @@ export const profileInfoRelations = relations(profileInfo,({one})=>({
 export const book = pgTable('book',{
     id:serial('id').primaryKey(),
     name:varchar('name').notNull(),
+    description:varchar('description').notNull(),
+    price:integer('price').notNull(),
+    book_img:varchar('book_img').notNull(),
     authorId:integer('author_id').references(()=>users.id)
 })
